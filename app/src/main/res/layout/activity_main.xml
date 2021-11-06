@@ -4,15 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:clickable="true"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="5dp"
+    tools:layout_editor_absoluteY="0dp">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tvIniciarSesion"
+        android:layout_width="363dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="INICIAR SESION"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="372dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="44dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="QUIZBET"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textIsSelectable="false"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="363dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Correo electrónico"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvIniciarSesion"
+        app:layout_constraintTop_toBottomOf="@+id/tvIniciarSesion" />
+
+    <EditText
+        android:id="@+id/etPassWord"
+        android:layout_width="363dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvIniciarSesion"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <TextView
+        android:id="@+id/tvOlvidadoContraseña"
+        android:layout_width="288dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="¿Has olvidado tu contraseña?"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/etPassWord"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/etPassWord"
+        app:layout_constraintTop_toBottomOf="@+id/etPassWord" />
+
+    <TextView
+        android:id="@+id/tvRegistrate"
+        android:layout_width="135dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="88dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="5sp"
+        android:singleLine="false"
+        android:text="Regístrate"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/tvNoTienesCuenta"
+        app:layout_constraintTop_toBottomOf="@+id/btnEnviar" />
+
+    <TextView
+        android:id="@+id/tvNoTienesCuenta"
+        android:layout_width="174dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="88dp"
+        android:gravity="right|center_vertical"
+        android:text="¿No tienes una cuenta?"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/btnEnviar"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="@+id/btnEnviar"
+        app:layout_constraintTop_toBottomOf="@+id/btnEnviar" />
+
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="326dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="32dp"
+        android:text="Entrar"
+        app:layout_constraintEnd_toEndOf="@+id/etPassWord"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="@+id/etPassWord"
+        app:layout_constraintTop_toBottomOf="@+id/tvOlvidadoContraseña" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
