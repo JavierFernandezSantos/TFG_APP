@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class MenuDownFragment extends Fragment {
+public class MenuUpFragment extends Fragment {
 
 
-    public MenuDownFragment() {}
+    public MenuUpFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {super.onCreate(savedInstanceState);}
@@ -21,6 +21,6 @@ public class MenuDownFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu_down, container, false);
+        return inflater.inflate(R.layout.fragment_menu_up, container, false);
     }
 }
