@@ -32,19 +32,20 @@
         android:gravity="right|center_vertical"
         android:text="¿Ya tienes una cuenta?"
         android:textColor="#1E1E20"
-        app:layout_constraintEnd_toEndOf="@+id/btnEnviar"
         app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="@+id/btnCrearCuenta"
         app:layout_constraintTop_toBottomOf="@+id/btnCrearCuenta" />
 
     <Button
         android:id="@+id/btnCrearCuenta"
-        android:layout_width="316dp"
-        android:layout_height="53dp"
+        android:layout_width="318dp"
+        android:layout_height="54dp"
         android:layout_marginTop="32dp"
         android:background="#FFFFFF"
         android:text="Crear cuenta"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#962715"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="@+id/etPassWord3"
         app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="@+id/etPassWord3"
