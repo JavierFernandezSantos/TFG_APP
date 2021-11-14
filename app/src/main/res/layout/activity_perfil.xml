@@ -162,7 +162,7 @@
         android:id="@+id/btnCerrarSesion"
         android:layout_width="252dp"
         android:layout_height="54dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="36dp"
         android:text="Cerrar sesión"
         app:backgroundTint="#962715"
         app:cornerRadius="20dp"
