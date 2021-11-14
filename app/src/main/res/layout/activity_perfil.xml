@@ -23,4 +23,126 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInfoCorreoTtle"
+        android:layout_width="371dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Correo Electrónico:"
+        android:textColor="#1E1E20"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerMenuUp" />
+
+    <TextView
+        android:id="@+id/tvInfoCorreo"
+        android:layout_width="371dp"
+        android:layout_height="32dp"
+        android:text="info correo electrónico"
+        android:textColor="#962715"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoCorreoTtle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvInfoCorreoTtle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoCorreoTtle" />
+
+    <TextView
+        android:id="@+id/tvInfoUsuarioTtle"
+        android:layout_width="371dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Usuario:"
+        android:textColor="#1E1E20"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoCorreoTtle"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/tvInfoCorreoTtle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoCorreo" />
+
+    <TextView
+        android:id="@+id/tvInfoUsuario"
+        android:layout_width="371dp"
+        android:layout_height="32dp"
+        android:text="info usuario"
+        android:textColor="#962715"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoUsuarioTtle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvInfoUsuarioTtle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoUsuarioTtle" />
+
+    <TextView
+        android:id="@+id/tvInfoNombre"
+        android:layout_width="371dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="104dp"
+        android:text="info nombre"
+        android:textColor="#962715"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoUsuarioTtle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvInfoUsuarioTtle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoUsuarioTtle" />
+
+    <TextView
+        android:id="@+id/tvInfoNombreTtle"
+        android:layout_width="371dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Nombre completo:"
+        android:textColor="#1E1E20"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoUsuarioTtle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvInfoUsuarioTtle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoUsuario" />
+
+    <TextView
+        android:id="@+id/tvInfoEquipoTtle"
+        android:layout_width="371dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Equipo favorito:"
+        android:textColor="#1E1E20"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoNombreTtle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvInfoNombreTtle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoNombre" />
+
+    <TextView
+        android:id="@+id/tvInfoEquipo"
+        android:layout_width="371dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="208dp"
+        android:text="info equipo"
+        android:textColor="#962715"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoUsuarioTtle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvInfoUsuarioTtle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoUsuarioTtle" />
+
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="316dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="56dp"
+        android:text="Cerrar sesión"
+        app:backgroundTint="#962715"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoEquipoTtle"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/tvInfoEquipoTtle"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoEquipo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

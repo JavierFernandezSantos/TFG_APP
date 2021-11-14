@@ -13,7 +13,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:gravity="center_vertical"
         android:paddingLeft="5sp"
         android:singleLine="false"
@@ -28,11 +28,10 @@
         android:id="@+id/tvYaTienesCuenta"
         android:layout_width="174dp"
         android:layout_height="28dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:gravity="right|center_vertical"
         android:text="¿Ya tienes una cuenta?"
         android:textColor="#1E1E20"
-        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="@+id/btnCrearCuenta"
         app:layout_constraintTop_toBottomOf="@+id/btnCrearCuenta" />
 
@@ -40,16 +39,16 @@
         android:id="@+id/btnCrearCuenta"
         android:layout_width="318dp"
         android:layout_height="54dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:background="#FFFFFF"
         android:text="Crear cuenta"
         android:textColor="#FFFFFF"
         app:backgroundTint="#962715"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="@+id/etPassWord3"
-        app:layout_constraintHorizontal_bias="0.595"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/etPassWord3"
-        app:layout_constraintTop_toBottomOf="@+id/etPassWord3"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreCompleto"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <TextView
@@ -131,4 +130,18 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/etPassWord2"
         app:layout_constraintTop_toBottomOf="@+id/etPassWord2" />
+
+    <EditText
+        android:id="@+id/etNombreCompleto"
+        android:layout_width="363dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Nombre completo"
+        android:inputType="textEmailAddress"
+        android:textColor="#1E1E20"
+        app:layout_constraintEnd_toEndOf="@+id/etPassWord3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etPassWord3"
+        app:layout_constraintTop_toBottomOf="@+id/etPassWord3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
