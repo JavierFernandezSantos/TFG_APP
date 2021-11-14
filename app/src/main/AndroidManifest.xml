@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TFG">
         <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FavoritosActivity"
+            android:exported="false" />
+        <activity
             android:name=".BrowseActivity"
             android:exported="false" />
         <activity
