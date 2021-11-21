@@ -50,7 +50,7 @@ public class BrowseActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<List<Result>> call, Response<List<Result>> response) {
                         for(Result r: response.body()){
-                            Log.d("Resultado", r.matches.toString());
+                            Log.d("Resultado", r.count);
                         }
                     }
 
