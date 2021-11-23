@@ -9,7 +9,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import apiResult.Match;
 import apiResult.Result;
 import apiResult.ResultService;
 import retrofit2.Call;
@@ -34,9 +36,6 @@ public class BrowseActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
 
-        adapter.addData(info);
-
-
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -47,7 +46,6 @@ public class BrowseActivity extends AppCompatActivity {
 
                 ResultService servicio = retrofit.create(ResultService.class);
 
-
                 Call<Result> llamada = servicio.listResult("2c1366a78e494dc8a48173ea02688663");
                 llamada.enqueue(new Callback<Result>() {
                     @Override
@@ -55,7 +53,19 @@ public class BrowseActivity extends AppCompatActivity {
                         try{
                             if(response.isSuccessful()){
                                 Result r = response.body();
-                                Log.d("Prueba", r.getFilters().matchday);
+                                List<Match> matches = r.getMatches();
+
+                                for(Match m : matches){
+                                    ArrayList<String> fila = new ArrayList<>();
+                                    fila.add(m.homeTeam.name);
+                                    fila.add(m.score.fullTime.homeTeam);
+                                    fila.add(m.score.fullTime.awayTeam);
+                                    fila.add(m.awayTeam.name);
+                                    info.add(fila);
+
+                                }
+                                adapter.addData(info);
+
                             }else{
                                 if (response.code() == 400) {
                                     Log.d("Error code 400",response.errorBody().string());

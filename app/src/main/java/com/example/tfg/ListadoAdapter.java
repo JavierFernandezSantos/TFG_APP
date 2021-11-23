@@ -5,17 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHolder> {
 
     private List<ArrayList<String>> mData;
     private LayoutInflater mInflater;
+    private ItemClickListener mClickListener;
 
     ListadoAdapter(Context context) {
         this.mInflater = LayoutInflater.from(context);
@@ -51,9 +51,15 @@ public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHold
         return mData.get(id);
     }
 
+    void setClickListener(ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
+    }
 
+    public interface ItemClickListener {
+        void onItemClick(View view, int position);
+    }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvInfoLocal;
         TextView tvInfoVisitante;
         TextView tvScoreLocal;
@@ -65,7 +71,12 @@ public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHold
             tvInfoVisitante = itemView.findViewById(R.id.idEquipoVisitante);
             tvScoreLocal = itemView.findViewById(R.id.idScoreLocal);
             tvScoreVisitante = itemView.findViewById(R.id.idScoreVisitante);
-            itemView.setOnClickListener((View.OnClickListener) this);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
         }
     }
 }
