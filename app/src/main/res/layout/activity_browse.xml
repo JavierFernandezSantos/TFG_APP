@@ -9,17 +9,17 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerViewMenuDown"
         android:name="com.example.tfg.MenuDownFragment"
-        android:layout_width="413dp"
-        android:layout_height="63dp"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/listView" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerViewMenuUp"
         android:name="com.example.tfg.MenuUpFragment"
-        android:layout_width="413dp"
+        android:layout_width="0dp"
         android:layout_height="63dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -28,12 +28,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listView"
-        android:layout_width="414dp"
-        android:layout_height="528dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerViewMenuDown"
+        android:layout_width="0dp"
+        android:layout_height="540dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragmentContainerViewMenuUp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainerViewMenuUp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
