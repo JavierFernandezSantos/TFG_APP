@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BrowseActivity extends AppCompatActivity {
 
     ListadoAdapter adapter;
-    ArrayList<ArrayList<String>> info = new ArrayList<>();
+    ArrayList<String> info = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
