@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class BrowseActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
 
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -44,19 +46,25 @@ public class BrowseActivity extends AppCompatActivity {
 
                 ResultService servicio = retrofit.create(ResultService.class);
 
-                Call<List<Result>> llamada = servicio.listResult();
-
-                llamada.enqueue(new Callback<List<Result>>() {
+                Call<Result> llamada = servicio.listResult("X-Auth-Token");
+                llamada.enqueue(new Callback<Result>() {
                     @Override
-                    public void onResponse(Call<List<Result>> call, Response<List<Result>> response) {
-                        for(Result r: response.body()){
-                            Log.d("Resultado", r.count);
+                    public void onResponse(Call<Result> call, Response<Result> response) {
+                        try{
+                            if(response.isSuccessful()){
+                                Result r = response.body();
+                                Log.d("Prueba", r.getMatches().toString());
+                            }else{
+                                Log.d("CHIVATO",response.toString());
+                            }
+                        }catch(Exception e){
+                            Toast.makeText(BrowseActivity.this,e.getMessage(), Toast.LENGTH_LONG);
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<List<Result>> call, Throwable t) {
-                        Log.d("Resultado", "Fallo en la peticion...");
+                    public void onFailure(Call<Result> call, Throwable t) {
+
                     }
                 });
 
