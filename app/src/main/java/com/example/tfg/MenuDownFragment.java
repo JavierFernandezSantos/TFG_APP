@@ -43,7 +43,7 @@ public class MenuDownFragment extends Fragment {
         btnFavoritos.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i2 = new Intent(getContext(),TiendaActivity.class);
+                Intent i2 = new Intent(getContext(), TiendaActivity.class);
                 startActivity(i2);
             }
         });
@@ -51,7 +51,7 @@ public class MenuDownFragment extends Fragment {
         btnQuiz.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i2 = new Intent(getContext(),TiendaActivity.class);
+                Intent i2 = new Intent(getContext(), TiendaActivity.class);
                 startActivity(i2);
             }
         });

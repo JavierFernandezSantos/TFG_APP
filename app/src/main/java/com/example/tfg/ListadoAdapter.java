@@ -52,8 +52,6 @@ public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHold
         notifyDataSetChanged();
     }
 
-
-
     ArrayList<String> getItem(int id) {
         return mData.get(id);
     }
