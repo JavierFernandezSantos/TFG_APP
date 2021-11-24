@@ -47,6 +47,13 @@ public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHold
         notifyDataSetChanged();
     }
 
+    public void removeData(ArrayList<ArrayList<String>> info) {
+        mData.removeAll(info);
+        notifyDataSetChanged();
+    }
+
+
+
     ArrayList<String> getItem(int id) {
         return mData.get(id);
     }

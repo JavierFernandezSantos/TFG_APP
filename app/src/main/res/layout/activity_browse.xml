@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".BrowseActivity">
 
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="127dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Buscar"
+        app:backgroundTint="#962715"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toEndOf="@+id/txtJornada"
+        app:layout_constraintTop_toTopOf="@+id/txtJornada" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerViewMenuDown"
         android:name="com.example.tfg.MenuDownFragment"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,7 +32,7 @@
         android:id="@+id/fragmentContainerViewMenuUp"
         android:name="com.example.tfg.MenuUpFragment"
         android:layout_width="0dp"
-        android:layout_height="63dp"
+        android:layout_height="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,22 +40,29 @@
 
     <EditText
         android:id="@+id/txtJornada"
-        android:layout_width="299dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="127dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="8dp"
+        android:hint="Jornada"
+        android:backgroundTint="#962715"
+        android:textAlignment="center"
+        android:singleLine="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragmentContainerViewMenuUp"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:gravity="center_horizontal" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listView"
         android:layout_width="0dp"
-        android:layout_height="540dp"
-        android:layout_marginTop="64dp"
+        android:layout_height="495dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/layout_border"
         app:layout_constraintTop_toBottomOf="@id/fragmentContainerViewMenuUp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
