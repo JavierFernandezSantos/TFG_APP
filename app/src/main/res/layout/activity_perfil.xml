@@ -131,45 +131,17 @@
         app:layout_constraintStart_toStartOf="@+id/tvInfoMonedasTtle"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoMonedasTtle" />
 
-    <TextView
-        android:id="@+id/tvInfoEquipoTtle"
-        android:layout_width="371dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Equipo favorito:"
-        android:textColor="#1E1E20"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tvInfoNombreTtle"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvInfoNombreTtle"
-        app:layout_constraintTop_toBottomOf="@+id/tvInfoMonedas" />
-
-    <TextView
-        android:id="@+id/tvInfoEquipo"
-        android:layout_width="371dp"
-        android:layout_height="32dp"
-        android:text="info equipo"
-        android:textColor="#962715"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tvInfoEquipoTtle"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvInfoEquipoTtle"
-        app:layout_constraintTop_toBottomOf="@+id/tvInfoEquipoTtle" />
-
     <Button
         android:id="@+id/btnCerrarSesion"
         android:layout_width="252dp"
         android:layout_height="54dp"
-        android:layout_marginTop="36dp"
         android:text="Cerrar sesión"
         app:backgroundTint="#962715"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/fragmentContainerMenuDown"
-        app:layout_constraintEnd_toEndOf="@+id/tvInfoEquipoTtle"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfoMonedas"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/tvInfoEquipoTtle"
-        app:layout_constraintTop_toBottomOf="@+id/tvInfoEquipo"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/tvInfoMonedas"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoMonedas"
+        app:layout_constraintVertical_bias="0.896" />
 </androidx.constraintlayout.widget.ConstraintLayout>

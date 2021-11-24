@@ -26,12 +26,12 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/btnFavoritos"
+            android:id="@+id/btnTienda"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="52dp"
             android:layout_marginLeft="52dp"
-            android:background="@drawable/estrella"
+            android:background="@drawable/carro"
             app:backgroundTint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnHome"
@@ -48,7 +48,7 @@
             android:background="@drawable/quiz"
             app:backgroundTint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnFavoritos"
+            app:layout_constraintStart_toEndOf="@+id/btnTienda"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.47"
             tools:ignore="SpeakableTextPresentCheck" />

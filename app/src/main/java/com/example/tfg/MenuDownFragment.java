@@ -28,7 +28,7 @@ public class MenuDownFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_menu_down, container, false);
 
         btnHome = v.findViewById(R.id.btnHome);
-        btnFavoritos = v.findViewById(R.id.btnFavoritos);
+        btnFavoritos = v.findViewById(R.id.btnTienda);
         btnQuiz = v.findViewById(R.id.btnQuiz);
         btnPerfil = v.findViewById(R.id.btnPerfil);
 
@@ -43,7 +43,7 @@ public class MenuDownFragment extends Fragment {
         btnFavoritos.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i2 = new Intent(getContext(),FavoritosActivity.class);
+                Intent i2 = new Intent(getContext(),TiendaActivity.class);
                 startActivity(i2);
             }
         });
@@ -51,7 +51,7 @@ public class MenuDownFragment extends Fragment {
         btnQuiz.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i2 = new Intent(getContext(),FavoritosActivity.class);
+                Intent i2 = new Intent(getContext(),TiendaActivity.class);
                 startActivity(i2);
             }
         });

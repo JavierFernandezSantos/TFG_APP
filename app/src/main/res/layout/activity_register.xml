@@ -103,25 +103,22 @@
 
     <Button
         android:id="@+id/btnCrearCuenta"
-        android:layout_width="318dp"
-        android:layout_height="54dp"
+        android:layout_width="316dp"
+        android:layout_height="61dp"
         android:layout_marginTop="28dp"
-        android:background="#FFFFFF"
         android:text="Crear cuenta"
-        android:textColor="#FFFFFF"
         app:backgroundTint="#962715"
         app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/etPassWord3"
-        app:layout_constraintHorizontal_bias="0.577"
-        app:layout_constraintStart_toStartOf="@+id/etPassWord3"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreCompleto"
-        tools:ignore="TextContrastCheck,TextContrastCheck" />
+        app:layout_constraintEnd_toEndOf="@+id/etNombreCompleto"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/etNombreCompleto"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreCompleto" />
 
     <TextView
         android:id="@+id/tvYaTienesCuenta"
         android:layout_width="174dp"
         android:layout_height="28dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:gravity="right|center_vertical"
         android:text="¿Ya tienes una cuenta?"
         android:textColor="#1E1E20"
@@ -134,7 +131,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:paddingLeft="5sp"
         android:singleLine="false"

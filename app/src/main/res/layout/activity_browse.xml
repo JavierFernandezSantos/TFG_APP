@@ -9,14 +9,14 @@
     <Button
         android:id="@+id/btnBuscar"
         android:layout_width="127dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:text="Buscar"
         app:backgroundTint="#962715"
         app:cornerRadius="20dp"
-        app:layout_constraintStart_toEndOf="@+id/txtJornada"
-        app:layout_constraintTop_toTopOf="@+id/txtJornada" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtJornada"
+        app:layout_constraintStart_toEndOf="@+id/txtJornada" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerViewMenuDown"
@@ -59,10 +59,10 @@
         android:layout_width="0dp"
         android:layout_height="495dp"
         android:layout_marginTop="56dp"
+        android:background="@drawable/layout_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/layout_border"
         app:layout_constraintTop_toBottomOf="@id/fragmentContainerViewMenuUp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
