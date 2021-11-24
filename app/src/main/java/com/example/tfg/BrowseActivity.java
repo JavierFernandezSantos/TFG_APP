@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class BrowseActivity extends AppCompatActivity {
 
     ListadoAdapter adapter;
     ArrayList<ArrayList<String>> info = new ArrayList<>();
+    EditText eJornada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class BrowseActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.listView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ListadoAdapter(this);
+
+        eJornada = findViewById(R.id.txtJornada);
 
         recyclerView.setAdapter(adapter);
 
@@ -46,7 +50,7 @@ public class BrowseActivity extends AppCompatActivity {
 
                 ResultService servicio = retrofit.create(ResultService.class);
 
-                Call<Result> llamada = servicio.listResult("2c1366a78e494dc8a48173ea02688663");
+                Call<Result> llamada = servicio.listResult("2c1366a78e494dc8a48173ea02688663",eJornada.getText().toString());
                 llamada.enqueue(new Callback<Result>() {
                     @Override
                     public void onResponse(Call<Result> call, Response<Result> response) {
