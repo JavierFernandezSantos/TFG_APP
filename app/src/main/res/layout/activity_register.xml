@@ -7,58 +7,30 @@
     android:background="#FFFFFF"
     tools:context=".RegisterActivity">
 
-    <TextView
-        android:id="@+id/tvTitulo2"
-        android:layout_width="372dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="44dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="QUIZBET"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#962715"
-        android:textIsSelectable="false"
-        android:textSize="60sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="360dp"
+        android:layout_height="176dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvRegistrateTitulo"
-        android:layout_width="363dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="REGÍSTRATE"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#1E1E20"
-        android:textIsSelectable="false"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tvTitulo2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvTitulo2"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo4" />
 
     <EditText
         android:id="@+id/etEmail2"
         android:layout_width="363dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
         android:ems="10"
         android:hint="Correo electrónico"
         android:inputType="textEmailAddress"
+        android:backgroundTint="#962715"
         android:textColor="#1E1E20"
-        app:layout_constraintEnd_toEndOf="@+id/tvTitulo2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvTitulo2"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegistrateTitulo" />
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <EditText
         android:id="@+id/etPassWord2"
@@ -66,6 +38,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:backgroundTint="#962715"
         android:hint="Contraseña"
         android:inputType="textEmailAddress"
         android:textColor="#1E1E20"
@@ -78,6 +51,7 @@
         android:layout_width="363dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
+        android:backgroundTint="#962715"
         android:ems="10"
         android:hint="Repetir contraseña"
         android:inputType="textEmailAddress"
@@ -92,6 +66,7 @@
         android:layout_width="363dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
+        android:backgroundTint="#962715"
         android:ems="10"
         android:hint="Nombre completo"
         android:inputType="textEmailAddress"

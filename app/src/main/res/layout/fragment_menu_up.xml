@@ -12,30 +12,11 @@
         android:background="#962715">
 
         <TextView
-            android:id="@+id/tvTituloMenu"
-            android:layout_width="175dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="QUIZBET"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="#FFFFFF"
-            android:textIsSelectable="false"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.454" />
-
-        <TextView
             android:id="@+id/tvUsuario"
             android:layout_width="100dp"
             android:layout_height="26dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
             android:gravity="center_horizontal|center_vertical"
             android:text="usuario"
             android:textAlignment="center"
@@ -43,17 +24,16 @@
             android:textColor="#FFFFFF"
             android:textIsSelectable="false"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvTituloMenu"
-            app:layout_constraintStart_toEndOf="@+id/tvTituloMenu"
-            app:layout_constraintTop_toTopOf="@+id/tvTituloMenu" />
+            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/imageView7"
+            app:layout_constraintVertical_bias="0.509" />
 
         <TextView
             android:id="@+id/tvUsuario2"
             android:layout_width="88dp"
             android:layout_height="26dp"
-            android:gravity="center_vertical"
             android:text="monedas"
-            android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textIsSelectable="false"
@@ -62,5 +42,17 @@
             app:layout_constraintStart_toEndOf="@+id/tvUsuario"
             app:layout_constraintTop_toTopOf="@+id/tvUsuario"
             app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="151dp"
+            android:layout_height="81dp"
+            android:src="@drawable/logo_sin_fondo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.452" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
