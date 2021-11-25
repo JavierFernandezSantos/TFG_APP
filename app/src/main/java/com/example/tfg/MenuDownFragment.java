@@ -14,7 +14,7 @@ import android.widget.Button;
 
 public class MenuDownFragment extends Fragment {
 
-    private Button btnHome, btnFavoritos, btnQuiz, btnPerfil;
+    private Button btnHome, btnTienda, btnQuiz, btnPerfil;
 
     public MenuDownFragment() {}
 
@@ -28,7 +28,7 @@ public class MenuDownFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_menu_down, container, false);
 
         btnHome = v.findViewById(R.id.btnHome);
-        btnFavoritos = v.findViewById(R.id.btnTienda);
+        btnTienda = v.findViewById(R.id.btnTienda);
         btnQuiz = v.findViewById(R.id.btnQuiz);
         btnPerfil = v.findViewById(R.id.btnPerfil);
 
@@ -40,7 +40,7 @@ public class MenuDownFragment extends Fragment {
             }
         });
 
-        btnFavoritos.setOnClickListener(new View.OnClickListener(){
+        btnTienda.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent i2 = new Intent(getContext(), TiendaActivity.class);
@@ -51,15 +51,7 @@ public class MenuDownFragment extends Fragment {
         btnQuiz.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent i2 = new Intent(getContext(), TiendaActivity.class);
-                startActivity(i2);
-            }
-        });
-
-        btnFavoritos.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent i3 = new Intent(getContext(),QuizActivity.class);
+                Intent i3 = new Intent(getContext(), QuizActivity.class);
                 startActivity(i3);
             }
         });

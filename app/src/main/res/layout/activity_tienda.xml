@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TiendaActivity">
+
+    <TextView
+        android:id="@+id/tvTituloTienda"
+        android:layout_width="282dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="TIENDA"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#962715"
+        android:textIsSelectable="false"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerMenuDown" />
+
+    <TextView
+        android:id="@+id/tvTitleSteam"
+        android:layout_width="127dp"
+        android:layout_height="23dp"
+        android:gravity="center_horizontal"
+        android:text="10€ STEAM"
+        android:textAlignment="center"
+        android:textColor="#1E1E20"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/steamImg"
+        app:layout_constraintStart_toStartOf="@+id/steamImg" />
+
+    <TextView
+        android:id="@+id/tvMonedasSteam"
+        android:layout_width="67dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:gravity="right"
+        android:text="10.000"
+        android:textColor="#1E1E20"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/steamImg"
+        app:layout_constraintTop_toBottomOf="@+id/steamImg" />
+
+    <TextView
+        android:id="@+id/tvMonedasPlay"
+        android:layout_width="67dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:gravity="right"
+        android:text="20.000"
+        android:textColor="#1E1E20"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/playImg"
+        app:layout_constraintTop_toBottomOf="@+id/playImg" />
+
+    <TextView
+        android:id="@+id/tvMonedasPlay2"
+        android:layout_width="67dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:gravity="right"
+        android:text="50.000"
+        android:textColor="#1E1E20"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/amazonImg"
+        app:layout_constraintTop_toBottomOf="@+id/amazonImg" />
+
+    <TextView
+        android:id="@+id/tvMonedasNetflix"
+        android:layout_width="67dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:gravity="right"
+        android:text="15.000"
+        android:textColor="#1E1E20"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/netflixImg"
+        app:layout_constraintTop_toBottomOf="@+id/netflixImg" />
+
+    <TextView
+        android:id="@+id/tvTitlePlay"
+        android:layout_width="127dp"
+        android:layout_height="23dp"
+        android:gravity="center_horizontal"
+        android:text="20€ PS STORE"
+        android:textAlignment="center"
+        android:textColor="#1E1E20"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/playImg"
+        app:layout_constraintStart_toStartOf="@+id/playImg" />
+
+    <TextView
+        android:id="@+id/tvTitleNetflix"
+        android:layout_width="127dp"
+        android:layout_height="23dp"
+        android:gravity="center_horizontal"
+        android:text="15€ NETFLIX"
+        android:textAlignment="center"
+        android:textColor="#1E1E20"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/netflixImg"
+        app:layout_constraintStart_toStartOf="@+id/netflixImg" />
+
+    <TextView
+        android:id="@+id/tvTitleAmazon"
+        android:layout_width="127dp"
+        android:layout_height="23dp"
+        android:gravity="center_horizontal"
+        android:text="50€ AMAZON"
+        android:textAlignment="center"
+        android:textColor="#1E1E20"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/amazonImg"
+        app:layout_constraintStart_toStartOf="@+id/amazonImg" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerMenuUp"
+        android:name="com.example.tfg.MenuDownFragment"
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/fragment_menu_down" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerMenuDown"
+        android:name="com.example.tfg.MenuUpFragment"
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/steamImg"
+        android:layout_width="127dp"
+        android:layout_height="168dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="92dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:src="@drawable/steam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerMenuDown"
+        app:srcCompat="@drawable/steam" />
+
+    <ImageView
+        android:id="@+id/playImg"
+        android:layout_width="127dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="60dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:src="@drawable/steam"
+        app:layout_constraintStart_toStartOf="@+id/steamImg"
+        app:layout_constraintTop_toBottomOf="@+id/steamImg"
+        app:srcCompat="@drawable/play" />
+
+    <ImageView
+        android:id="@+id/netflixImg"
+        android:layout_width="127dp"
+        android:layout_height="168dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:src="@drawable/netflix"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/steamImg"
+        app:srcCompat="@drawable/netflix" />
+
+    <ImageView
+        android:id="@+id/amazonImg"
+        android:layout_width="127dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/amazon"
+        app:layout_constraintEnd_toEndOf="@+id/netflixImg"
+        app:layout_constraintTop_toBottomOf="@+id/netflixImg"
+        app:srcCompat="@drawable/amazon" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="18dp"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMonedasSteam"
+        app:layout_constraintStart_toEndOf="@+id/tvMonedasSteam"
+        app:layout_constraintTop_toTopOf="@+id/tvMonedasSteam"
+        app:srcCompat="@drawable/moneda" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="18dp"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMonedasPlay"
+        app:layout_constraintStart_toEndOf="@+id/tvMonedasPlay"
+        app:layout_constraintTop_toTopOf="@+id/tvMonedasPlay"
+        app:srcCompat="@drawable/moneda" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="18dp"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMonedasPlay2"
+        app:layout_constraintStart_toEndOf="@+id/tvMonedasPlay2"
+        app:layout_constraintTop_toTopOf="@+id/tvMonedasPlay2"
+        app:srcCompat="@drawable/moneda" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="18dp"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMonedasNetflix"
+        app:layout_constraintStart_toEndOf="@+id/tvMonedasNetflix"
+        app:layout_constraintTop_toTopOf="@+id/tvMonedasNetflix"
+        app:srcCompat="@drawable/moneda" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
