@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -15,4 +16,7 @@ public interface ResultService {
 
     @GET("iniciarsesion1/{email}/{pass}")
     Call<Usuario> iniciarSesion(@Path("email") String email,@Path("pass") String pass);
+
+    @POST("/insertarusuario")
+    Call<Usuario> insertarUsuario(UsuarioRegistro user);
 }
