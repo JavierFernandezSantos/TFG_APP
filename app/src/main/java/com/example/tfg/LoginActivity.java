@@ -106,4 +106,11 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
             }
         });
     }
+
+
+    //DESHABILITAR BOTON ATRAS
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
 }
