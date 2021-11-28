@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/alexl/AndroidStudioProjects/TFG/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3398148148148148" />
         <entry key="..\:/Users/alexl/AndroidStudioProjects/TFG/app/src/main/res/drawable-v24/layout_border.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/alexl/AndroidStudioProjects/TFG/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3398148148148148" />
         <entry key="..\:/Users/alexl/AndroidStudioProjects/TFG/app/src/main/res/drawable/layout_border.xml" value="0.3398148148148148" />
+        <entry key="..\:/Users/alexl/AndroidStudioProjects/TFG/app/src/main/res/drawable/layout_border_fondo_rojo.xml" value="0.3398148148148148" />
         <entry key="..\:/Users/alexl/AndroidStudioProjects/TFG/app/src/main/res/layout/activity_browse.xml" value="0.33" />
         <entry key="..\:/Users/alexl/AndroidStudioProjects/TFG/app/src/main/res/layout/activity_favoritos.xml" value="0.33" />
         <entry key="..\:/Users/alexl/AndroidStudioProjects/TFG/app/src/main/res/layout/activity_listado_adapter.xml" value="0.35260416666666666" />

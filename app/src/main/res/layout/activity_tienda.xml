@@ -6,11 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".TiendaActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/layout_border_fondo_rojo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="174dp"
+            android:layout_height="60dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:src="@drawable/logo_sin_fondo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvUsuarioBrowse"
+            android:layout_width="0dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="36dp"
+            android:gravity="right|center_vertical"
+            android:text="usuario"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textIsSelectable="false"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvPuntosBrowse"
+            android:layout_width="0dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="40dp"
+            android:gravity="right|center_vertical"
+            android:text="puntos"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toBottomOf="@+id/tvUsuarioBrowse" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="23dp"
+            android:layout_height="29dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPuntosBrowse"
+            app:layout_constraintEnd_toEndOf="@+id/tvUsuarioBrowse"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvPuntosBrowse"
+            app:layout_constraintTop_toTopOf="@+id/tvPuntosBrowse"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/moneda" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/tvTituloTienda"
         android:layout_width="282dp"
         android:layout_height="54dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="TIENDA"
         android:textAlignment="center"
@@ -22,7 +90,73 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerMenuDown" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/layout_border_fondo_rojo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="102dp"
+            android:layout_height="60dp"
+            android:background="@drawable/hogar"
+            android:scaleX="0.4"
+            android:scaleY="0.7"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnTienda"
+            android:layout_width="103dp"
+            android:layout_height="60dp"
+            android:background="@drawable/carro"
+            android:scaleX="0.4"
+            android:scaleY="0.7"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnHome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnQuiz"
+            android:layout_width="103dp"
+            android:layout_height="60dp"
+            android:background="@drawable/quiz"
+            android:scaleX="0.4"
+            android:scaleY="0.7"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnTienda"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnPerfil"
+            android:layout_width="102dp"
+            android:layout_height="60dp"
+            android:background="@drawable/perfil"
+            android:scaleX="0.4"
+            android:scaleY="0.7"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnQuiz"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvTitleSteam"
@@ -132,38 +266,18 @@
         app:layout_constraintBottom_toTopOf="@+id/amazonImg"
         app:layout_constraintStart_toStartOf="@+id/amazonImg" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerMenuUpBrowse"
-        android:name="com.example.tfg.MenuDownFragment"
-        android:layout_width="413dp"
-        android:layout_height="63dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout="@layout/fragment_menu_down" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerMenuDown"
-        android:name="com.example.tfg.MenuUpFragment"
-        android:layout_width="413dp"
-        android:layout_height="63dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/steamImg"
         android:layout_width="127dp"
         android:layout_height="168dp"
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="40dp"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:src="@drawable/steam"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerMenuDown"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloTienda"
         app:srcCompat="@drawable/steam" />
 
     <ImageView

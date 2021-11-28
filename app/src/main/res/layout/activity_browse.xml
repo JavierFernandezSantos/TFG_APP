@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BrowseActivity">
+    tools:context=".BrowseActivity"
+    android:background="@drawable/layout_border">
 
     <Button
         android:id="@+id/btnBuscar"
@@ -16,53 +17,169 @@
         app:backgroundTint="#962715"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/txtJornada"
-        app:layout_constraintStart_toEndOf="@+id/txtJornada" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerViewMenuDown"
-        android:name="com.example.tfg.MenuDownFragment"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/listView" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerMenuUpBrowse"
-        android:name="com.example.tfg.MenuUpFragment"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/txtJornada"
+        app:layout_constraintTop_toTopOf="@+id/txtJornada" />
 
     <EditText
         android:id="@+id/txtJornada"
         android:layout_width="127dp"
         android:layout_height="42dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
         android:layout_marginTop="8dp"
-        android:hint="Jornada"
         android:backgroundTint="#962715"
-        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:hint="Jornada"
         android:singleLine="true"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerMenuUpBrowse"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listView"
         android:layout_width="0dp"
-        android:layout_height="495dp"
-        android:layout_marginTop="56dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/layout_border"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragmentContainerMenuUpBrowse" />
+        app:layout_constraintTop_toBottomOf="@+id/txtJornada" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/layout_border_fondo_rojo">
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="174dp"
+            android:layout_height="60dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:src="@drawable/logo_sin_fondo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvUsuarioBrowse"
+            android:layout_width="0dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="36dp"
+            android:gravity="right|center_vertical"
+            android:text="usuario"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textIsSelectable="false"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvPuntosBrowse"
+            android:layout_width="0dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="40dp"
+            android:gravity="right|center_vertical"
+            android:text="puntos"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toBottomOf="@+id/tvUsuarioBrowse" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="23dp"
+            android:layout_height="29dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPuntosBrowse"
+            app:layout_constraintEnd_toEndOf="@+id/tvUsuarioBrowse"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvPuntosBrowse"
+            app:layout_constraintTop_toTopOf="@+id/tvPuntosBrowse"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/moneda" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/layout_border_fondo_rojo">
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="102dp"
+            android:layout_height="60dp"
+            android:background="@drawable/hogar"
+            android:scaleX="0.4"
+            android:scaleY="0.7"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnTienda"
+            android:layout_width="103dp"
+            android:layout_height="60dp"
+            android:background="@drawable/carro"
+            android:scaleX="0.4"
+            android:scaleY="0.7"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnHome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnQuiz"
+            android:layout_width="103dp"
+            android:layout_height="60dp"
+            android:background="@drawable/quiz"
+            android:scaleX="0.4"
+            android:scaleY="0.7"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnTienda"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnPerfil"
+            android:layout_width="102dp"
+            android:layout_height="60dp"
+            android:background="@drawable/perfil"
+            android:scaleX="0.4"
+            android:scaleY="0.7"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnQuiz"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

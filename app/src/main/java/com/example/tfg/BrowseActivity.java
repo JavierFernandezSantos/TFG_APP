@@ -3,11 +3,14 @@ package com.example.tfg;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,8 @@ public class BrowseActivity extends AppCompatActivity {
     ListadoAdapter adapter;
     ArrayList<ArrayList<String>> info = new ArrayList<>();
     EditText eJornada;
-    Button btnBuscar;
+    Button btnBuscar, btnTienda, btnQuiz, btnPerfil;
+    TextView tvUsuario, tvPuntos;
 
 
     @Override
@@ -39,11 +43,12 @@ public class BrowseActivity extends AppCompatActivity {
 
         eJornada = findViewById(R.id.txtJornada);
         btnBuscar = findViewById(R.id.btnBuscar);
-
+        tvUsuario = findViewById(R.id.tvUsuarioBrowse);
+        tvPuntos = findViewById(R.id.tvPuntosBrowse);
 
         Bundle datos = getIntent().getExtras();
-        String nombre = datos.getString("nombre");
-        String puntos = datos.getString("puntos");
+        tvUsuario.setText(datos.getString("nombre") + " " + datos.getString("apellidos"));
+        tvPuntos.setText(datos.getString("puntos"));
 
 
         btnBuscar.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +59,48 @@ public class BrowseActivity extends AppCompatActivity {
         });
 
         recyclerView.setAdapter(adapter);
+
+        btnTienda = findViewById(R.id.btnTienda);
+        btnTienda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(BrowseActivity.this,TiendaActivity.class);
+                i.putExtra("id",datos.getString("id"));
+                i.putExtra("nombre",datos.getString("nombre"));
+                i.putExtra("apellidos",datos.getString("apellidos"));
+                i.putExtra("email",datos.getString("email"));
+                i.putExtra("puntos",datos.getString("puntos"));
+                startActivity(i);
+            }
+        });
+
+        btnQuiz = findViewById(R.id.btnQuiz);
+        btnQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i2 = new Intent(BrowseActivity.this,QuizActivity.class);
+                i2.putExtra("id",datos.getString("id"));
+                i2.putExtra("nombre",datos.getString("nombre"));
+                i2.putExtra("apellidos",datos.getString("apellidos"));
+                i2.putExtra("email",datos.getString("email"));
+                i2.putExtra("puntos",datos.getString("puntos"));
+                startActivity(i2);
+            }
+        });
+
+        btnPerfil = findViewById(R.id.btnPerfil);
+        btnPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i3 = new Intent(BrowseActivity.this,PerfilActivity.class);
+                i3.putExtra("id",datos.getString("id"));
+                i3.putExtra("nombre",datos.getString("nombre"));
+                i3.putExtra("apellidos",datos.getString("apellidos"));
+                i3.putExtra("email",datos.getString("email"));
+                i3.putExtra("puntos",datos.getString("puntos"));
+                startActivity(i3);
+            }
+        });
     }
 
     private void buscar(String jornada) {
