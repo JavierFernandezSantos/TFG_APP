@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <EditText
-        android:id="@+id/etContraseña"
+        android:id="@+id/etPass"
         android:layout_width="363dp"
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
@@ -41,17 +41,17 @@
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <TextView
-        android:id="@+id/tvOlvidadoContraseña"
+        android:id="@+id/tvOlvidadarPass"
         android:layout_width="288dp"
         android:layout_height="28dp"
         android:layout_marginTop="44dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="¿Has olvidado tu contraseña?"
         android:textColor="#962715"
-        app:layout_constraintEnd_toEndOf="@+id/etContraseña"
+        app:layout_constraintEnd_toEndOf="@+id/etPass"
         app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="@+id/etContraseña"
-        app:layout_constraintTop_toBottomOf="@+id/etContraseña" />
+        app:layout_constraintStart_toStartOf="@+id/etPass"
+        app:layout_constraintTop_toBottomOf="@+id/etPass" />
 
     <TextView
         android:id="@+id/tvRegistrate"
@@ -89,10 +89,10 @@
         android:text="Entrar"
         app:backgroundTint="#962715"
         app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/etContraseña"
+        app:layout_constraintEnd_toEndOf="@+id/etPass"
         app:layout_constraintHorizontal_bias="0.446"
-        app:layout_constraintStart_toStartOf="@+id/etContraseña"
-        app:layout_constraintTop_toBottomOf="@+id/tvOlvidadoContraseña" />
+        app:layout_constraintStart_toStartOf="@+id/etPass"
+        app:layout_constraintTop_toBottomOf="@+id/tvOlvidadarPass" />
 
     <ImageView
         android:id="@+id/imageView5"
