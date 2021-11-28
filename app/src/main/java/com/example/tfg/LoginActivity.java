@@ -72,7 +72,6 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
         if(response.isSuccessful()){
             usuarioSesion= response.body();
-            Toast.makeText(getApplicationContext(), "Bienvenido " + usuarioSesion.getNombre(), Toast.LENGTH_LONG).show();
             exito=true;
         }
         else {

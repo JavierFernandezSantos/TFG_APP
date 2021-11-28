@@ -65,6 +65,5 @@ public class TiendaActivity extends AppCompatActivity {
                 startActivity(i3);
             }
         });
-
     }
 }
