@@ -16,13 +16,16 @@ import android.widget.Toast;
 
 import java.time.LocalDate;
 
+import apiResult.ResultService;
 import apiResult.Usuario;
 import apiResult.UsuarioRegistro;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RegisterActivity extends AppCompatActivity implements Callback<Usuario>{
+public class RegisterActivity extends AppCompatActivity{
 
     TextView tvIniciaSesion;
     Button btnRegistrar;
@@ -57,37 +60,51 @@ public class RegisterActivity extends AppCompatActivity implements Callback<Usua
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-
-                user = new UsuarioRegistro(etEmail.getText().toString(),
-                        etPassword.getText().toString(),
-                        LocalDate.parse(etFecha.getText().toString()),
-                        etNombre.getText().toString(),
-                        etApellidos.getText().toString());
-
-                registrar(user);
+                registrar();
             }
         });
     }
 
-    private void registrar(UsuarioRegistro user) {
-        Call<Usuario> call=UsuarioAdapter.getApiService().insertarUsuario(user);
-        call.enqueue(this);
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void registrar() {
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+        LocalDate fechaNacimiento = LocalDate.parse(etFecha.getText().toString());
+        String nombre = etNombre.getText().toString().trim();
+        String apellidos = etApellidos.getText().toString();
 
-    }
-
-    @Override
-    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-        if(response.isSuccessful()){
-            Log.d("AAAAAAAA","aaaaaaaaaaaaaa");
+        if(email.isEmpty()){
+            etEmail.setError("Email is requiered");
+            etEmail.requestFocus();
+            return;
         }
-        else {
-            Log.d("BBBBBBBBB","bbbbbbbbb");
+
+        if(password.isEmpty()){
+            etPassword.setError("Password is requiered");
+            etPassword.requestFocus();
+            return;
         }
 
-    }
+        user = new UsuarioRegistro(email,password,fechaNacimiento,nombre,apellidos);
 
-    @Override
-    public void onFailure(Call<Usuario> call, Throwable t) {
-        Toast.makeText(getApplicationContext(), "Error de red", Toast.LENGTH_LONG).show();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.1.32:8080/quizbet/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ResultService servicio = retrofit.create(ResultService.class);
+
+        Call<UsuarioRegistro> call = servicio.insertarUsuario(user);
+        call.enqueue(new Callback<UsuarioRegistro>() {
+            @Override
+            public void onResponse(Call<UsuarioRegistro> call, Response<UsuarioRegistro> response) {
+                Toast.makeText(getApplicationContext(), "Bien hecho", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<UsuarioRegistro> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Fatal", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

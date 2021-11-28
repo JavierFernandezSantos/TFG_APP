@@ -18,5 +18,5 @@ public interface ResultService {
     Call<Usuario> iniciarSesion(@Path("email") String email,@Path("pass") String pass);
 
     @POST("/insertarusuario")
-    Call<Usuario> insertarUsuario(UsuarioRegistro user);
+    Call<UsuarioRegistro> insertarUsuario(UsuarioRegistro user);
 }
