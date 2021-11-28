@@ -3,17 +3,14 @@ package com.example.tfg;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import apiResult.Match;
 import apiResult.Result;
 import apiResult.ResultService;
@@ -30,6 +27,7 @@ public class BrowseActivity extends AppCompatActivity {
     EditText eJornada;
     Button btnBuscar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +41,11 @@ public class BrowseActivity extends AppCompatActivity {
         btnBuscar = findViewById(R.id.btnBuscar);
 
 
+        Bundle datos = getIntent().getExtras();
+        String nombre = datos.getString("nombre");
+        String puntos = datos.getString("puntos");
+
+
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,9 +54,6 @@ public class BrowseActivity extends AppCompatActivity {
         });
 
         recyclerView.setAdapter(adapter);
-
-
-
     }
 
     private void buscar(String jornada) {

@@ -37,7 +37,7 @@
         android:textColor="#1E1E20"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/etEmail"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <TextView
@@ -57,20 +57,19 @@
         android:id="@+id/tvRegistrate"
         android:layout_width="135dp"
         android:layout_height="28dp"
-        android:layout_marginTop="24dp"
         android:gravity="center_vertical"
         android:paddingLeft="5sp"
         android:singleLine="false"
         android:text="Regístrate"
         android:textColor="#962715"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNoTienesCuenta"
         app:layout_constraintStart_toEndOf="@+id/tvNoTienesCuenta"
-        app:layout_constraintTop_toBottomOf="@+id/btnEnviar" />
+        app:layout_constraintTop_toTopOf="@+id/tvNoTienesCuenta" />
 
     <TextView
         android:id="@+id/tvNoTienesCuenta"
         android:layout_width="174dp"
         android:layout_height="28dp"
-        android:layout_marginTop="24dp"
         android:gravity="right|center_vertical"
         android:text="¿No tienes una cuenta?"
         android:textColor="#1E1E20"
@@ -79,7 +78,7 @@
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="@+id/btnEnviar"
         app:layout_constraintTop_toBottomOf="@+id/btnEnviar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.192" />
 
     <Button
         android:id="@+id/btnEnviar"

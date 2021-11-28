@@ -1,6 +1,8 @@
 package com.example.tfg;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -11,15 +13,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
-import apiResult.ResultService;
 import apiResult.Usuario;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class LoginActivity extends AppCompatActivity implements Callback<Usuario> {
@@ -28,6 +25,7 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
     Button btnEnviar;
     Usuario usuarioSesion;
     boolean exito;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +37,9 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
         tvEmail=findViewById(R.id.etEmail);
         tvPass=findViewById(R.id.etPass);
-        //ACCEDER A LA APP
 
+
+        //ACCEDER A LA APP
         pulsarBotonEnviar();
 
 
@@ -65,25 +64,34 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
 
     }
     public void iniciarSesion(String email,String pass){
-
         Call<Usuario> call=UsuarioAdapter.getApiService().iniciarSesion(email,pass);
         call.enqueue(this);
     }
 
-
     @Override
     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
         if(response.isSuccessful()){
-
-            Toast.makeText(getApplicationContext(), "dentrooooooooo", Toast.LENGTH_LONG).show();
             usuarioSesion= response.body();
-            Log.d("Nombre usuario",usuarioSesion.getNombre());
+            Toast.makeText(getApplicationContext(), "Bienvenido " + usuarioSesion.getNombre(), Toast.LENGTH_LONG).show();
             exito=true;
         }
+        else {
+            exito = false;
+        }
 
-        else
-            Toast.makeText(getApplicationContext(), "Error al serializar", Toast.LENGTH_LONG).show();
-            exito=false;
+        if (exito) {
+            Intent i = new Intent(LoginActivity.this, BrowseActivity.class);
+
+            i.putExtra("id",usuarioSesion.getId());
+            i.putExtra("nombre",usuarioSesion.getNombre());
+            i.putExtra("apellidos",usuarioSesion.getApellidos());
+            i.putExtra("email",usuarioSesion.getEmail());
+            i.putExtra("puntos",String.valueOf(usuarioSesion.getPuntos()));
+
+            startActivity(i);
+        } else {
+            Toast.makeText(getApplicationContext(), "Usuario incorrecto", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -95,17 +103,8 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iniciarSesion(tvEmail.getText().toString(),tvPass.getText().toString());
-
-                if(exito){
-                    Intent i = new Intent(LoginActivity.this,BrowseActivity.class);
-                    startActivity(i);
-                }else
-
-                    Toast.makeText(getApplicationContext(), "Usuario incorrecto", Toast.LENGTH_LONG).show();
+                iniciarSesion(tvEmail.getText().toString(), tvPass.getText().toString());
             }
         });
     }
-
-
 }

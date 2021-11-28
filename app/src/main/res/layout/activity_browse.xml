@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="@+id/listView" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerViewMenuUp"
+        android:id="@+id/fragmentContainerMenuUpBrowse"
         android:name="com.example.tfg.MenuUpFragment"
         android:layout_width="0dp"
         android:layout_height="56dp"
@@ -50,7 +50,7 @@
         android:textAlignment="center"
         android:singleLine="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerViewMenuUp"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerMenuUpBrowse"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
         android:gravity="center_horizontal" />
 
@@ -63,6 +63,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragmentContainerViewMenuUp" />
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainerMenuUpBrowse" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

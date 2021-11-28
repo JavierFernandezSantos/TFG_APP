@@ -30,7 +30,7 @@
             app:layout_constraintVertical_bias="0.509" />
 
         <TextView
-            android:id="@+id/tvUsuario2"
+            android:id="@+id/tvMonedas"
             android:layout_width="88dp"
             android:layout_height="26dp"
             android:text="monedas"

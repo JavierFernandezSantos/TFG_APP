@@ -133,7 +133,7 @@
         app:layout_constraintStart_toStartOf="@+id/amazonImg" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerMenuUp"
+        android:id="@+id/fragmentContainerMenuUpBrowse"
         android:name="com.example.tfg.MenuDownFragment"
         android:layout_width="413dp"
         android:layout_height="63dp"
