@@ -11,12 +11,17 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TiendaActivity extends AppCompatActivity {
+import apiResult.Usuario;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class TiendaActivity extends AppCompatActivity implements Callback<Usuario> {
 
     Button btnhome, btnQuiz, btnPerfil;
     TextView tvUsuario, tvPuntos;
     View imgSteam, imgNetflix, imgPlay, imgAmazon;
-
+    Usuario usu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +84,8 @@ public class TiendaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                comprarProducto(Integer.parseInt(datos.getString("id")),
+                        Integer.parseInt(datos.getString("puntos")),1000);
             }
         });
 
@@ -86,21 +93,48 @@ public class TiendaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                comprarProducto(Integer.parseInt(datos.getString("id")),
+                        Integer.parseInt(datos.getString("puntos")),5000);
             }
         });
 
         imgNetflix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                comprarProducto(Integer.parseInt(datos.getString("id")),
+                        Integer.parseInt(datos.getString("puntos")),2000);
             }
         });
 
         imgAmazon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                comprarProducto(Integer.parseInt(datos.getString("id")),
+                        Integer.parseInt(datos.getString("puntos")),3000);
             }
         });
+    }
+    public void comprarProducto(int id,int puntos,int puntosProducto){
+        if(puntos<puntosProducto){
+            Toast.makeText(getApplicationContext(), "No tienes los puntos suficientes", Toast.LENGTH_LONG).show();
+        }else{
+            Call<Usuario> call=UsuarioAdapter.getApiService().comprarTienda(id,puntosProducto);
+            call.enqueue(this);
+        }
+
+    }
+
+    @Override
+    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+        if(response.isSuccessful()){
+            usu= response.body();
+            Toast.makeText(getApplicationContext(), "Puntos actuales"+usu.getPuntos(), Toast.LENGTH_LONG).show();
+        }else
+            Toast.makeText(getApplicationContext(), "FFFFFFFFF", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onFailure(Call<Usuario> call, Throwable t) {
+        Toast.makeText(getApplicationContext(), "Error de red", Toast.LENGTH_LONG).show();
     }
 }

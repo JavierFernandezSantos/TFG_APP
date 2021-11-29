@@ -8,6 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -20,4 +21,7 @@ public interface ResultService {
 
     @POST("/insertarusuario")
     Call<UsuarioRegistro> insertarUsuario(@Body UsuarioRegistro user);
+
+    @PUT("restarpuntos/{id}/{puntos}")
+    Call<Usuario> comprarTienda(@Path("id") int id,@Path("puntos") int puntos);
 }
