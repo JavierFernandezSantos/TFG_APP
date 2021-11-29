@@ -149,4 +149,10 @@ public class BrowseActivity extends AppCompatActivity {
             }
         });
     }
+
+    //DESHABILITAR BOTON ATRAS
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
 }

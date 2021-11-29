@@ -3,6 +3,7 @@ package apiResult;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 
@@ -18,5 +19,5 @@ public interface ResultService {
     Call<Usuario> iniciarSesion(@Path("email") String email,@Path("pass") String pass);
 
     @POST("/insertarusuario")
-    Call<UsuarioRegistro> insertarUsuario(UsuarioRegistro user);
+    Call<UsuarioRegistro> insertarUsuario(@Body UsuarioRegistro user);
 }

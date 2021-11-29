@@ -3,15 +3,19 @@ package com.example.tfg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TiendaActivity extends AppCompatActivity {
 
     Button btnhome, btnQuiz, btnPerfil;
     TextView tvUsuario, tvPuntos;
+    View imgSteam, imgNetflix, imgPlay, imgAmazon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,39 @@ public class TiendaActivity extends AppCompatActivity {
                 i3.putExtra("email",datos.getString("email"));
                 i3.putExtra("puntos",datos.getString("puntos"));
                 startActivity(i3);
+            }
+        });
+
+        imgSteam = findViewById(R.id.steamImg);
+        imgPlay = findViewById(R.id.playImg);
+        imgNetflix = findViewById(R.id.netflixImg);
+        imgAmazon = findViewById(R.id.amazonImg);
+
+        imgSteam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgNetflix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgAmazon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
