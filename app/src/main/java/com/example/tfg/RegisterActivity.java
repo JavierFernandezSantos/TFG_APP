@@ -3,6 +3,7 @@ package com.example.tfg;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Build;
@@ -14,10 +15,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.GsonBuilder;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import apiResult.ResultService;
+import apiResult.Sesion;
 import apiResult.Usuario;
+import apiResult.UsuarioL;
 import apiResult.UsuarioRegistro;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity{
 
     TextView tvIniciaSesion;
     Button btnRegistrar;
-    UsuarioRegistro user;
+    UsuarioL user;
     EditText etEmail, etPassword, etFecha, etNombre, etApellidos;
 
 
@@ -85,26 +92,45 @@ public class RegisterActivity extends AppCompatActivity{
             return;
         }
 
-        user = new UsuarioRegistro(email,password,fechaNacimiento,nombre,apellidos);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.32:8080/quizbet/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        ResultService servicio = retrofit.create(ResultService.class);
-
-        Call<UsuarioRegistro> call = servicio.insertarUsuario(user);
-        call.enqueue(new Callback<UsuarioRegistro>() {
-            @Override
-            public void onResponse(Call<UsuarioRegistro> call, Response<UsuarioRegistro> response) {
-                Toast.makeText(getApplicationContext(), "Bien hecho", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<UsuarioRegistro> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Fatal", Toast.LENGTH_SHORT).show();
-            }
+        user = new UsuarioL(nombre, apellidos, fechaNacimiento, new Sesion(email, password, "USUARIO") {
         });
+
+
+                final String url = "http://192.168.1.32:8080/quizbet/";
+
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(url)
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                ResultService service = retrofit.create(ResultService.class);
+                Call<UsuarioL> response = service.insertarUsuario(user);
+
+                response.enqueue(new Callback<UsuarioL>() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onResponse(Call<UsuarioL> call, Response<UsuarioL> response) {
+                        try{
+                            if(response.isSuccessful()){
+                                Log.d("RESPUESTA","BIEEEEEEN");
+                                //Log.w("2.0 getFeed > Full json res wrapped in pretty printed gson => ",new GsonBuilder().setPrettyPrinting().create().toJson(response));
+
+                            }else{
+                                Log.d("RESPUESTA","MAAAAAAL");
+                                Log.w("2.0 getFeed > Full json res wrapped in pretty printed gson => ",new GsonBuilder().setPrettyPrinting().create().toJson(response));
+
+                            }
+
+                        }catch(Exception e){
+                            Toast.makeText(RegisterActivity.this,e.getMessage(), Toast.LENGTH_LONG);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<UsuarioL> call, Throwable t) {
+                        Toast.makeText(RegisterActivity.this,"Error de red", Toast.LENGTH_LONG);
+                    }
+                });
+
     }
 }

@@ -1,5 +1,6 @@
 package apiResult;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioL {
@@ -14,6 +15,15 @@ public class UsuarioL {
 
 
     public UsuarioL() {
+    }
+
+    public UsuarioL(String nombre, String apellido, Object fechaNac, Sesion sesion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNac = fechaNac;
+        this.puntos = 0;
+        this.sesion = sesion;
+        this.preguntasResueltas = new ArrayList<>();
     }
 
     public UsuarioL(int id, String nombre, String apellido, Object fechaNac, int puntos, Sesion sesion, List<Object> preguntasResueltas) {

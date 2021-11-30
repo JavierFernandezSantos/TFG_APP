@@ -20,7 +20,7 @@ public interface ResultService {
     Call<Usuario> iniciarSesion(@Path("email") String email,@Path("pass") String pass);
 
     @POST("/insertarusuario")
-    Call<UsuarioRegistro> insertarUsuario(@Body UsuarioRegistro user);
+    Call<UsuarioL> insertarUsuario(@Body UsuarioL user);
 
     @GET("listarporpuntos")
     Call<List<UsuarioL>> listarPorPuntos();
