@@ -77,7 +77,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i3 = new Intent(PerfilActivity.this,QuizActivity.class);
+                Intent i3 = new Intent(PerfilActivity.this, ListadoActivity.class);
                 i3.putExtra("id",datos.getString("id"));
                 i3.putExtra("nombre",datos.getString("nombre"));
                 i3.putExtra("apellidos",datos.getString("apellidos"));

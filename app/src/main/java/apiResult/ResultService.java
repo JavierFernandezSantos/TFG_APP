@@ -20,4 +20,7 @@ public interface ResultService {
 
     @POST("/insertarusuario")
     Call<UsuarioRegistro> insertarUsuario(@Body UsuarioRegistro user);
+
+    @GET("listarporpuntos")
+    Call<List<UsuarioL>> listarPorPuntos();
 }

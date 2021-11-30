@@ -3,13 +3,10 @@ package com.example.tfg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class TiendaActivity extends AppCompatActivity {
 
@@ -46,7 +43,7 @@ public class TiendaActivity extends AppCompatActivity {
         btnQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i2 = new Intent(TiendaActivity.this,QuizActivity.class);
+                Intent i2 = new Intent(TiendaActivity.this, ListadoActivity.class);
                 i2.putExtra("id",datos.getString("id"));
                 i2.putExtra("nombre",datos.getString("nombre"));
                 i2.putExtra("apellidos",datos.getString("apellidos"));

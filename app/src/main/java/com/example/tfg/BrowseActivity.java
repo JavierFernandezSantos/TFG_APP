@@ -78,8 +78,8 @@ public class BrowseActivity extends AppCompatActivity {
         btnQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i2 = new Intent(BrowseActivity.this,QuizActivity.class);
-                i2.putExtra("id",datos.getString("id"));
+                Intent i2 = new Intent(BrowseActivity.this, ListadoActivity.class);
+                //i2.putExtra("id",datos.getString("id"));
                 i2.putExtra("nombre",datos.getString("nombre"));
                 i2.putExtra("apellidos",datos.getString("apellidos"));
                 i2.putExtra("email",datos.getString("email"));

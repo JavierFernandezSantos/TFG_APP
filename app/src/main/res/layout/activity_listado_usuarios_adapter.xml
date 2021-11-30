@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_border"
+    tools:context=".ListadoUsuariosAdapter">
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="220dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="5sp"
+        android:text="TextView"
+        android:textColor="@color/fondo_rojo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/idTitleNombreListado"
+        app:layout_constraintTop_toTopOf="@+id/idTitleNombreListado" />
+
+    <TextView
+        android:id="@+id/tvApellidos"
+        android:layout_width="220dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="5sp"
+        android:text="TextView"
+        android:textColor="@color/fondo_rojo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/idTitleApellidosListado"
+        app:layout_constraintTop_toTopOf="@+id/idTitleApellidosListado" />
+
+    <TextView
+        android:id="@+id/tvPuntos"
+        android:layout_width="220dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="5sp"
+        android:text="TextView"
+        android:textColor="@color/fondo_rojo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/idTitlePuntosListado"
+        app:layout_constraintStart_toEndOf="@+id/idTitlePuntosListado"
+        app:layout_constraintTop_toTopOf="@+id/idTitlePuntosListado" />
+
+    <TextView
+        android:id="@+id/idTitleNombreListado"
+        android:layout_width="130dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:paddingLeft="5sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/layout_border_fondo_rojo"
+        android:gravity="center_vertical"
+        android:text="Nombre:"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <TextView
+        android:id="@+id/idTitleApellidosListado"
+        android:layout_width="130dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/layout_border_fondo_rojo"
+        android:gravity="center_vertical"
+        android:text="Apellidos:"
+        android:paddingLeft="5sp"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/idTitleNombreListado"
+        app:layout_constraintTop_toBottomOf="@+id/idTitleNombreListado" />
+
+    <TextView
+        android:id="@+id/idTitlePuntosListado"
+        android:layout_width="130dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="5sp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/layout_border_fondo_rojo"
+        android:gravity="center_vertical"
+        android:text="Puntos:"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/idTitleApellidosListado"
+        app:layout_constraintTop_toBottomOf="@+id/idTitleApellidosListado" />
+</androidx.constraintlayout.widget.ConstraintLayout>

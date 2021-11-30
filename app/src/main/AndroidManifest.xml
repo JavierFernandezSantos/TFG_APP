@@ -14,6 +14,9 @@
         android:theme="@style/Theme.TFG"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ListadoUsuariosAdapter"
+            android:exported="false" />
+        <activity
             android:name=".TiendaActivity"
             android:exported="false" />
         <activity
@@ -23,7 +26,7 @@
             android:name=".PerfilActivity"
             android:exported="false" />
         <activity
-            android:name=".QuizActivity"
+            android:name=".ListadoActivity"
             android:exported="false" />
         <activity
             android:name=".FavoritosActivity"
