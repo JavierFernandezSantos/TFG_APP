@@ -20,6 +20,9 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
     TextView tvUsuario, tvPuntos;
     View imgSteam, imgNetflix, imgPlay, imgAmazon;
     Usuario usu;
+    Bundle datos;
+    int puntos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +30,10 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
 
         tvUsuario = findViewById(R.id.tvUsuarioBrowse);
         tvPuntos = findViewById(R.id.tvPuntosBrowse);
-        Bundle datos = getIntent().getExtras();
-        tvUsuario.setText(datos.getString("nombre") + " " + datos.getString("apellidos"));
-        tvPuntos.setText(datos.getString("puntos"));
+        datos = getIntent().getExtras();
+        puntos = Integer.parseInt(datos.getString("puntos"));
+        tvUsuario.setText(datos.getString("nombre"));
+        tvPuntos.setText(String.valueOf(puntos));
 
         btnhome = findViewById(R.id.btnHome);
         btnhome.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +44,7 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
                 i.putExtra("nombre",datos.getString("nombre"));
                 i.putExtra("apellidos",datos.getString("apellidos"));
                 i.putExtra("email",datos.getString("email"));
-                i.putExtra("puntos",datos.getString("puntos"));
+                i.putExtra("puntos",String.valueOf(puntos));
                 startActivity(i);
             }
         });
@@ -54,7 +58,7 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
                 i2.putExtra("nombre",datos.getString("nombre"));
                 i2.putExtra("apellidos",datos.getString("apellidos"));
                 i2.putExtra("email",datos.getString("email"));
-                i2.putExtra("puntos",datos.getString("puntos"));
+                i2.putExtra("puntos",String.valueOf(puntos));
                 startActivity(i2);
             }
         });
@@ -68,7 +72,7 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
                 i3.putExtra("nombre",datos.getString("nombre"));
                 i3.putExtra("apellidos",datos.getString("apellidos"));
                 i3.putExtra("email",datos.getString("email"));
-                i3.putExtra("puntos",datos.getString("puntos"));
+                i3.putExtra("puntos",String.valueOf(puntos));
                 startActivity(i3);
             }
         });
@@ -83,7 +87,7 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
             public void onClick(View v) {
 
                 comprarProducto(Integer.parseInt(datos.getString("id")),
-                        Integer.parseInt(datos.getString("puntos")),1000);
+                        puntos,10000);
             }
         });
 
@@ -92,7 +96,7 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
             public void onClick(View v) {
 
                 comprarProducto(Integer.parseInt(datos.getString("id")),
-                        Integer.parseInt(datos.getString("puntos")),5000);
+                        puntos,20000);
             }
         });
 
@@ -100,7 +104,7 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
             @Override
             public void onClick(View v) {
                 comprarProducto(Integer.parseInt(datos.getString("id")),
-                        Integer.parseInt(datos.getString("puntos")),2000);
+                        puntos,15000);
             }
         });
 
@@ -108,18 +112,21 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
             @Override
             public void onClick(View v) {
                 comprarProducto(Integer.parseInt(datos.getString("id")),
-                        Integer.parseInt(datos.getString("puntos")),3000);
+                        puntos,50000);
             }
         });
     }
-    public void comprarProducto(int id,int puntos,int puntosProducto){
-        if(puntos<puntosProducto){
+    public void comprarProducto(int id,int puntos1,int puntosProducto){
+        if(puntos1<puntosProducto){
             Toast.makeText(getApplicationContext(), "No tienes los puntos suficientes", Toast.LENGTH_LONG).show();
         }else{
             Call<Usuario> call=UsuarioAdapter.getApiService().comprarTienda(id,puntosProducto);
             call.enqueue(this);
+            if(puntos> puntosProducto){
+                puntos = puntos - puntosProducto;
+                tvPuntos.setText(String.valueOf(puntos));
+            }
         }
-
     }
 
     @Override

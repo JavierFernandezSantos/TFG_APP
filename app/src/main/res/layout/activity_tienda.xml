@@ -281,18 +281,6 @@
         app:srcCompat="@drawable/steam" />
 
     <ImageView
-        android:id="@+id/playImg"
-        android:layout_width="127dp"
-        android:layout_height="168dp"
-        android:layout_marginTop="60dp"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
-        android:src="@drawable/steam"
-        app:layout_constraintStart_toStartOf="@+id/steamImg"
-        app:layout_constraintTop_toBottomOf="@+id/steamImg"
-        app:srcCompat="@drawable/play" />
-
-    <ImageView
         android:id="@+id/netflixImg"
         android:layout_width="127dp"
         android:layout_height="168dp"
@@ -302,6 +290,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/steamImg"
         app:srcCompat="@drawable/netflix" />
+
+    <ImageView
+        android:id="@+id/playImg"
+        android:layout_width="127dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="232dp"
+        android:layout_marginRight="232dp"
+        android:src="@drawable/play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/steamImg"
+        app:layout_constraintTop_toBottomOf="@+id/steamImg"
+        app:srcCompat="@drawable/play" />
 
     <ImageView
         android:id="@+id/amazonImg"

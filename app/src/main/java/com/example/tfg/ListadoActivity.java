@@ -48,7 +48,7 @@ public class ListadoActivity extends AppCompatActivity {
         tvUsuario = findViewById(R.id.tvUsuarioBrowse);
         tvPuntos = findViewById(R.id.tvPuntosBrowse);
         Bundle datos = getIntent().getExtras();
-        tvUsuario.setText(datos.getString("nombre") + " " + datos.getString("apellidos"));
+        tvUsuario.setText(datos.getString("nombre"));
         tvPuntos.setText(datos.getString("puntos"));
 
         btnhome = findViewById(R.id.btnHome);
