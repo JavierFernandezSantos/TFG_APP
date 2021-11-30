@@ -47,7 +47,7 @@ public class BrowseActivity extends AppCompatActivity {
         tvPuntos = findViewById(R.id.tvPuntosBrowse);
 
         Bundle datos = getIntent().getExtras();
-        tvUsuario.setText(datos.getString("nombre") + " " + datos.getString("apellidos"));
+        tvUsuario.setText(datos.getString("nombre") );
         tvPuntos.setText(datos.getString("puntos"));
 
 
@@ -79,7 +79,7 @@ public class BrowseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i2 = new Intent(BrowseActivity.this, ListadoActivity.class);
-                //i2.putExtra("id",datos.getString("id"));
+                i2.putExtra("id",datos.getString("id"));
                 i2.putExtra("nombre",datos.getString("nombre"));
                 i2.putExtra("apellidos",datos.getString("apellidos"));
                 i2.putExtra("email",datos.getString("email"));

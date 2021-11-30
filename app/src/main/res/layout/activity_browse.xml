@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BrowseActivity"
-    android:background="@drawable/layout_border">
+    android:background="@drawable/layout_border"
+    tools:context=".BrowseActivity">
 
     <Button
         android:id="@+id/btnBuscar"
@@ -52,10 +52,10 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:background="@drawable/layout_border_fondo_rojo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/layout_border_fondo_rojo">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView10"
@@ -120,11 +120,11 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:background="@drawable/layout_border_fondo_rojo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/layout_border_fondo_rojo">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btnHome"
