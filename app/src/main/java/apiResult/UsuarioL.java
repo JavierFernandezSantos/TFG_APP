@@ -1,5 +1,6 @@
 package apiResult;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class UsuarioL {
     private int id;
     private String nombre;
     private String apellido;
-    private Object fechaNac;
+    private LocalDate fechaNac;
     private int puntos;
     private Sesion sesion;
     private List<Object> preguntasResueltas = null;
@@ -17,7 +18,7 @@ public class UsuarioL {
     public UsuarioL() {
     }
 
-    public UsuarioL(String nombre, String apellido, Object fechaNac, Sesion sesion) {
+    public UsuarioL(String nombre, String apellido, LocalDate fechaNac, Sesion sesion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
@@ -26,7 +27,7 @@ public class UsuarioL {
         this.preguntasResueltas = new ArrayList<>();
     }
 
-    public UsuarioL(int id, String nombre, String apellido, Object fechaNac, int puntos, Sesion sesion, List<Object> preguntasResueltas) {
+    public UsuarioL(int id, String nombre, String apellido, LocalDate fechaNac, int puntos, Sesion sesion, List<Object> preguntasResueltas) {
         super();
         this.id = id;
         this.nombre = nombre;
@@ -65,7 +66,7 @@ public class UsuarioL {
         return fechaNac;
     }
 
-    public void setFechaNac(Object fechaNac) {
+    public void setFechaNac(LocalDate fechaNac) {
         this.fechaNac = fechaNac;
     }
 
