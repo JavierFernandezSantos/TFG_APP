@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
         if (exito) {
             Intent i = new Intent(LoginActivity.this, BrowseActivity.class);
 
-            i.putExtra("id",usuarioSesion.getId());
+            i.putExtra("id", String.valueOf( usuarioSesion.getId()));
             i.putExtra("nombre",usuarioSesion.getNombre());
             i.putExtra("apellidos",usuarioSesion.getApellidos());
             i.putExtra("email",usuarioSesion.getEmail());
