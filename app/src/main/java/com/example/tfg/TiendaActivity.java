@@ -131,12 +131,14 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
 
     @Override
     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-        if(response.isSuccessful()){
-            usu= response.body();
-            Toast.makeText(getApplicationContext(), "Puntos actuales"+usu.getPuntos(), Toast.LENGTH_LONG).show();
-        }else
+        if (response.isSuccessful()) {
+            usu = response.body();
+            Toast.makeText(getApplicationContext(), "Puntos actuales" + usu.getPuntos(), Toast.LENGTH_LONG).show();
+        } else {
             Toast.makeText(getApplicationContext(), "FFFFFFFFF", Toast.LENGTH_LONG).show();
+        }
     }
+
 
     @Override
     public void onFailure(Call<Usuario> call, Throwable t) {

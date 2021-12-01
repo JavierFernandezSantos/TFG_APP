@@ -4,6 +4,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 
@@ -19,8 +20,8 @@ public interface ResultService {
     @GET("iniciarsesion1/{email}/{pass}")
     Call<Usuario> iniciarSesion(@Path("email") String email,@Path("pass") String pass);
 
-    @POST("/insertarusuario")
-    Call<UsuarioL> insertarUsuario(@Body UsuarioL user);
+    @POST("/insertarusuarioformulario")
+    Call<UsuarioL> insertarUsuario(@Field("nombre") String nombre);
 
     @GET("listarporpuntos")
     Call<List<UsuarioL>> listarPorPuntos();
