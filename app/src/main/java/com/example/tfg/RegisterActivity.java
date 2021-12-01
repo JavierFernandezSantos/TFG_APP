@@ -61,7 +61,6 @@ public class RegisterActivity extends AppCompatActivity{
         etNombre = findViewById(R.id.etNombre);
         etApellidos = findViewById(R.id.etApellidos);
 
-
         btnRegistrar = findViewById(R.id.btnCrearCuenta);
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -73,11 +72,12 @@ public class RegisterActivity extends AppCompatActivity{
         });
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+    //@RequiresApi(api = Build.VERSION_CODES.O)
     private void registrar() {
         String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
-        LocalDate fechaNacimiento = LocalDate.parse(etFecha.getText().toString());
+        String pass = etPassword.getText().toString().trim();
+        //LocalDate fechaNac = LocalDate.parse(etFecha.getText().toString());
+        String fechaNac = etFecha.getText().toString();
         String nombre = etNombre.getText().toString().trim();
         String apellidos = etApellidos.getText().toString();
 
@@ -87,51 +87,45 @@ public class RegisterActivity extends AppCompatActivity{
             return;
         }
 
-        if(password.isEmpty()){
+        if(pass.isEmpty()){
             etPassword.setError("Password is requiered");
             etPassword.requestFocus();
             return;
         }
 
-        user = new UsuarioL(nombre, apellidos, fechaNacimiento, new Sesion(email, password, "USUARIO") {
+        final String url = "http://192.168.1.32:8080/quizbet/";
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ResultService service = retrofit.create(ResultService.class);
+        Call<UsuarioRegistro> response = service.registrarUsuario(nombre,apellidos,fechaNac,email,pass);
+
+        response.enqueue(new Callback<UsuarioRegistro>() {
+
+            @Override
+            public void onResponse(Call<UsuarioRegistro> call, Response<UsuarioRegistro> response) {
+                try{
+                    if(response.isSuccessful()){
+                        Log.d("RESPUESTA","BIEEEEEEN");
+                        //Log.w("2.0 getFeed > Full json res wrapped in pretty printed gson => ",new GsonBuilder().setPrettyPrinting().create().toJson(response));
+                    }else{
+                        Log.d("RESPUESTA","MAAAAAAL");
+                        //Log.w("2.0 getFeed > Full json res wrapped in pretty printed gson => ",new GsonBuilder().setPrettyPrinting().create().toJson(response));
+                        //Log.i("Responsestring", response.body().toString());
+                    }
+
+                }catch(Exception e){
+                    Toast.makeText(RegisterActivity.this,e.getMessage(), Toast.LENGTH_LONG);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UsuarioRegistro> call, Throwable t) {
+                Toast.makeText(RegisterActivity.this,"Error de red", Toast.LENGTH_LONG);
+            }
         });
-
-
-                final String url = "http://192.168.1.32:8080/quizbet/";
-
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(url)
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-
-                ResultService service = retrofit.create(ResultService.class);
-                Call<UsuarioL> response = service.insertarUsuario(user);
-
-                response.enqueue(new Callback<UsuarioL>() {
-                    @SuppressLint("LongLogTag")
-                    @Override
-                    public void onResponse(Call<UsuarioL> call, Response<UsuarioL> response) {
-                        try{
-                            if(response.isSuccessful()){
-                                Log.d("RESPUESTA","BIEEEEEEN");
-                                //Log.w("2.0 getFeed > Full json res wrapped in pretty printed gson => ",new GsonBuilder().setPrettyPrinting().create().toJson(response));
-
-                            }else{
-                                Log.d("RESPUESTA","MAAAAAAL");
-                                Log.w("2.0 getFeed > Full json res wrapped in pretty printed gson => ",new GsonBuilder().setPrettyPrinting().create().toJson(response));
-
-                            }
-
-                        }catch(Exception e){
-                            Toast.makeText(RegisterActivity.this,e.getMessage(), Toast.LENGTH_LONG);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<UsuarioL> call, Throwable t) {
-                        Toast.makeText(RegisterActivity.this,"Error de red", Toast.LENGTH_LONG);
-                    }
-                });
-
     }
 }

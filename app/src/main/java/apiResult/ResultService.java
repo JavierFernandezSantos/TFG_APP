@@ -4,6 +4,9 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 
@@ -21,6 +24,13 @@ public interface ResultService {
 
     @POST("/insertarusuario")
     Call<UsuarioL> insertarUsuario(@Body UsuarioL user);
+
+    @GET("registro/{nombre}/{apellido}/{fechaNac}/{email}/{pass}")
+    Call<UsuarioRegistro> registrarUsuario(@Path("nombre") String nombre,
+                                           @Path("apellido") String apellido,
+                                           @Path("fechaNac") String fechaNac,
+                                           @Path("email") String email,
+                                           @Path("pass") String pass);
 
     @GET("listarporpuntos")
     Call<List<UsuarioL>> listarPorPuntos();

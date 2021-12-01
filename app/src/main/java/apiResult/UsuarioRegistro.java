@@ -5,17 +5,17 @@ import java.time.LocalDate;
 public class UsuarioRegistro {
 
     private String email;
-    private String contraseña;
-    private LocalDate fecha;
+    private String pass;
+    private String fechaNac;
     private String nombre;
-    private String apellidos;
+    private String apellido;
 
-    public UsuarioRegistro( String email, String contraseña, LocalDate fecha, String nombre, String apellidos) {
+    public UsuarioRegistro( String email, String pass, String fechaNac, String nombre, String apellido) {
         this.email = email;
-        this.contraseña = contraseña;
-        this.fecha = fecha;
+        this.pass = pass;
+        this.fechaNac = fechaNac;
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
     }
 
     public String getEmail() {
@@ -26,20 +26,20 @@ public class UsuarioRegistro {
         this.email = email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPass() {
+        return pass;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
+    public String getFechaNac() {
+        return fechaNac;
     }
 
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+    public void setFechaNac(String fechaNac) {
+        this.fechaNac = fechaNac;
     }
 
     public String getNombre() {
@@ -50,11 +50,11 @@ public class UsuarioRegistro {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 }

@@ -135,7 +135,7 @@ public class TiendaActivity extends AppCompatActivity implements Callback<Usuari
             usu = response.body();
             Toast.makeText(getApplicationContext(), "Puntos actuales" + usu.getPuntos(), Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(getApplicationContext(), "FFFFFFFFF", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "No dispones de las monedas suficientes", Toast.LENGTH_LONG).show();
         }
     }
 
