@@ -125,9 +125,9 @@ public class RegisterActivity extends AppCompatActivity{
             public void onResponse(Call<UsuarioRegistro> call, Response<UsuarioRegistro> response) {
                 try{
                     if(response.isSuccessful()){
-                        Log.d("RESPUESTA","BIEEEEEEN");
+                        Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_LONG).show();
                     }else{
-                        Log.d("RESPUESTA","MAAAAAAL");
+                        Toast.makeText(getApplicationContext(), "Error en las credenciales", Toast.LENGTH_LONG).show();
                     }
 
                 }catch(Exception e){
