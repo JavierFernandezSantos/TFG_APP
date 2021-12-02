@@ -4,6 +4,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -22,8 +23,6 @@ public interface ResultService {
     @GET("iniciarsesion1/{email}/{pass}")
     Call<Usuario> iniciarSesion(@Path("email") String email,@Path("pass") String pass);
 
-    @POST("/insertarusuario")
-    Call<UsuarioL> insertarUsuario(@Body UsuarioL user);
 
     @GET("registro/{nombre}/{apellido}/{fechaNac}/{email}/{pass}")
     Call<UsuarioRegistro> registrarUsuario(@Path("nombre") String nombre,
@@ -37,4 +36,7 @@ public interface ResultService {
 
     @PUT("restarpuntos/{id}/{puntos}")
     Call<Usuario> comprarTienda(@Path("id") int id,@Path("puntos") int puntos);
+
+    @DELETE("delete/{id}")
+    Call<Usuario> eliminarUsuario(@Path("id") int id);
 }

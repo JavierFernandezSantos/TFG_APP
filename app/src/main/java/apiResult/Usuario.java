@@ -11,6 +11,14 @@ public class Usuario {
     private String email;
     private int puntos;
 
+    public Usuario(int id){
+        this.id = id;
+        this.nombre = "";
+        this.apellidos = "";
+        this.email = "";
+        this.puntos = 0;
+    }
+
     public Usuario(int id, String nombre, String apellidos, String email, int puntos) {
         this.id = id;
         this.nombre = nombre;

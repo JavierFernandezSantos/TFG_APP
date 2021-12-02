@@ -41,19 +41,6 @@
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <TextView
-        android:id="@+id/tvOlvidadarPass"
-        android:layout_width="288dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="44dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="¿Has olvidado tu contraseña?"
-        android:textColor="#962715"
-        app:layout_constraintEnd_toEndOf="@+id/etPass"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="@+id/etPass"
-        app:layout_constraintTop_toBottomOf="@+id/etPass" />
-
-    <TextView
         android:id="@+id/tvRegistrate"
         android:layout_width="135dp"
         android:layout_height="28dp"
@@ -75,23 +62,23 @@
         android:textColor="#1E1E20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnEnviar"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnEnviar"
         app:layout_constraintTop_toBottomOf="@+id/btnEnviar"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.198" />
 
     <Button
         android:id="@+id/btnEnviar"
         android:layout_width="316dp"
         android:layout_height="61dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="152dp"
         android:text="Entrar"
         app:backgroundTint="#962715"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="@+id/etPass"
         app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="@+id/etPass"
-        app:layout_constraintTop_toBottomOf="@+id/tvOlvidadarPass" />
+        app:layout_constraintTop_toBottomOf="@+id/etPass" />
 
     <ImageView
         android:id="@+id/imageView5"

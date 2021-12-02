@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
 
         //VARIABLES
         tvRegistrate = (TextView) findViewById(R.id.tvRegistrate);
-        tvOlvidadoContraseña = (TextView) findViewById(R.id.tvOlvidadarPass);
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
         tvEmail=findViewById(R.id.etEmail);
         tvPass=findViewById(R.id.etPass);
@@ -50,15 +49,6 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
             public void onClick(View v) {
                 Intent i2 = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(i2);
-            }
-        });
-
-        //ENVIAR CORREO ELECTRONICO CON LOS CREDENCIALES DEL USUARIO
-        tvOlvidadoContraseña.setPaintFlags(tvOlvidadoContraseña.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        tvOlvidadoContraseña.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Enviaremos un correo electrónico con tus credenciales!", Toast.LENGTH_LONG).show();
             }
         });
 

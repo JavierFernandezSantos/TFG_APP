@@ -44,6 +44,7 @@
         android:layout_height="60dp"
         android:background="@drawable/layout_border_fondo_rojo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -58,6 +59,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="117dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Eliminar usuario"
+            android:textColor="@color/fondo_rojo"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FBFBFB"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
