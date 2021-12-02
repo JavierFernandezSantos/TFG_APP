@@ -72,11 +72,9 @@ public class RegisterActivity extends AppCompatActivity{
         });
     }
 
-    //@RequiresApi(api = Build.VERSION_CODES.O)
     private void registrar() {
         String email = etEmail.getText().toString().trim();
         String pass = etPassword.getText().toString().trim();
-        //LocalDate fechaNac = LocalDate.parse(etFecha.getText().toString());
         String fechaNac = etFecha.getText().toString();
         String nombre = etNombre.getText().toString().trim();
         String apellidos = etApellidos.getText().toString();
@@ -90,6 +88,24 @@ public class RegisterActivity extends AppCompatActivity{
         if(pass.isEmpty()){
             etPassword.setError("Password is requiered");
             etPassword.requestFocus();
+            return;
+        }
+
+        if(fechaNac.isEmpty()){
+            etFecha.setError("Date is requiered");
+            etFecha.requestFocus();
+            return;
+        }
+
+        if(nombre.isEmpty()){
+            etNombre.setError("Nome is requiered");
+            etNombre.requestFocus();
+            return;
+        }
+
+        if(apellidos.isEmpty()){
+            etApellidos.setError("Nome is requiered");
+            etApellidos.requestFocus();
             return;
         }
 
@@ -110,11 +126,8 @@ public class RegisterActivity extends AppCompatActivity{
                 try{
                     if(response.isSuccessful()){
                         Log.d("RESPUESTA","BIEEEEEEN");
-                        //Log.w("2.0 getFeed > Full json res wrapped in pretty printed gson => ",new GsonBuilder().setPrettyPrinting().create().toJson(response));
                     }else{
                         Log.d("RESPUESTA","MAAAAAAL");
-                        //Log.w("2.0 getFeed > Full json res wrapped in pretty printed gson => ",new GsonBuilder().setPrettyPrinting().create().toJson(response));
-                        //Log.i("Responsestring", response.body().toString());
                     }
 
                 }catch(Exception e){
