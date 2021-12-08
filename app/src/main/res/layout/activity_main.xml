@@ -54,6 +54,21 @@
         app:layout_constraintTop_toTopOf="@+id/tvNoTienesCuenta" />
 
     <TextView
+        android:id="@+id/tvResetPassLogin"
+        android:layout_width="193dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="5sp"
+        android:singleLine="false"
+        android:text="¿Has olvidado tu contraseña?"
+        android:textColor="#962715"
+        app:layout_constraintEnd_toEndOf="@+id/etPass"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/etPass"
+        app:layout_constraintTop_toBottomOf="@+id/etPass" />
+
+    <TextView
         android:id="@+id/tvNoTienesCuenta"
         android:layout_width="174dp"
         android:layout_height="28dp"
@@ -89,15 +104,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo4" />
-
-    <Button
-        android:id="@+id/btResetearPass1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset Pass"
-        app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
-        app:layout_constraintEnd_toEndOf="@+id/etPass"
-        app:layout_constraintStart_toStartOf="@+id/etPass"
-        app:layout_constraintTop_toBottomOf="@+id/etPass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

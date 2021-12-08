@@ -6,25 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".ResetPassActivity">
 
-    <EditText
-        android:id="@+id/tvEmailResetPass2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Email cuenta"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txtCodigoPorEmail"
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="360dp"
+        android:layout_height="176dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo4" />
+
+    <Button
+        android:id="@+id/btEnviarEmailUsuario"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:text="Enviar correo"
+        app:backgroundTint="#962715"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvEmailResetPass"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/tvEmailResetPass"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailResetPass" />
+
+    <Button
+        android:id="@+id/btCambiarPass"
+        android:layout_width="200dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:text="Cambiar contraseña"
+        app:backgroundTint="#962715"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/btEnviarEmailUsuario"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtCodigoPorEmail"
-        app:layout_constraintTop_toBottomOf="@+id/txtCodigoPorEmail"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintStart_toStartOf="@+id/btEnviarEmailUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/txtNuevaPass" />
+
+    <TextView
+        android:id="@+id/tvNoTienesCuenta2"
+        android:layout_width="363dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="Dirección de email donde se enviará el correo electrónico:"
+        android:textColor="#1E1E20"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/tvNoTienesCuenta3"
+        android:layout_width="363dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:text="Codigo enviado por correo electrónico:"
+        android:textColor="#1E1E20"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvEmailResetPass"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEmailResetPass"
+        app:layout_constraintTop_toBottomOf="@+id/btEnviarEmailUsuario" />
 
     <EditText
         android:id="@+id/txtNuevaPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_width="363dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#962715"
         android:ems="10"
         android:hint="Nueva contraseña"
@@ -35,52 +86,49 @@
         app:layout_constraintStart_toStartOf="@+id/tvEmailResetPass2"
         app:layout_constraintTop_toBottomOf="@+id/tvEmailResetPass2" />
 
-    <Button
-        android:id="@+id/btEnviarEmailUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enviar correo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tvEmailResetPass"
-        app:layout_constraintStart_toStartOf="@+id/tvEmailResetPass"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailResetPass"
-        app:layout_constraintVertical_bias="0.063" />
-
     <EditText
         android:id="@+id/tvEmailResetPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="363dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#962715"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        android:text="Email a enviar correo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144" />
+        android:textColor="#1E1E20"
+        app:layout_constraintEnd_toEndOf="@+id/tvNoTienesCuenta2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvNoTienesCuenta2"
+        app:layout_constraintTop_toBottomOf="@+id/tvNoTienesCuenta2" />
 
     <EditText
         android:id="@+id/txtCodigoPorEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_width="363dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#962715"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Codigo enviado por email"
-        app:layout_constraintEnd_toEndOf="@+id/btEnviarEmailUsuario"
-        app:layout_constraintStart_toStartOf="@+id/btEnviarEmailUsuario"
-        app:layout_constraintTop_toBottomOf="@+id/btEnviarEmailUsuario" />
+        android:hint="Código"
+        android:inputType="textEmailAddress"
+        android:textColor="#1E1E20"
+        app:layout_constraintEnd_toEndOf="@+id/tvNoTienesCuenta3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvNoTienesCuenta3"
+        app:layout_constraintTop_toBottomOf="@+id/tvNoTienesCuenta3" />
 
-    <Button
-        android:id="@+id/btCambiarPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
-        android:text="Cambiar contraseña"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txtNuevaPass"
-        app:layout_constraintStart_toStartOf="@+id/txtNuevaPass"
-        app:layout_constraintTop_toBottomOf="@+id/txtNuevaPass" />
+    <EditText
+        android:id="@+id/tvEmailResetPass2"
+        android:layout_width="363dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#962715"
+        android:ems="10"
+        android:hint="Email de la cuenta"
+        android:inputType="textEmailAddress"
+        android:textColor="#1E1E20"
+        app:layout_constraintEnd_toEndOf="@+id/txtCodigoPorEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtCodigoPorEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodigoPorEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

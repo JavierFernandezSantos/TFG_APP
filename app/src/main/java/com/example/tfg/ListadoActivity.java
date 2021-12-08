@@ -100,7 +100,7 @@ public class ListadoActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final String url = "http://192.168.1.133:8080/quizbet/";
+                final String url = "http://192.168.1.32:8080/quizbet/";
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(url)
@@ -139,51 +139,4 @@ public class ListadoActivity extends AppCompatActivity {
         }).start();
 
     }
-
-   /* public class Peticion extends AsyncTask<Void,Void,Void>{
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            adapter.removeData(info);
-            info.removeAll(info);
-            final String url = "http://192.168.1.32:8080/quizbet/";
-
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(url)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-
-            ResultService service = retrofit.create(ResultService.class);
-            Call<List<UsuarioL>> response = service.listarPorPuntos();
-
-            response.enqueue(new Callback<List<UsuarioL>>() {
-                @Override
-                public void onResponse(Call<List<UsuarioL>> call, Response<List<UsuarioL>> response) {
-                    try{
-                        List<UsuarioL> usuarios = response.body();
-                        for (UsuarioL user : usuarios){
-                            ArrayList<String> fila = new ArrayList<>();
-                            fila.add(user.getNombre());
-                            fila.add(user.getApellido());
-                            fila.add(String.valueOf(user.getPuntos()));
-                            info.add(fila);
-                        }
-                        adapter.addData(info);
-
-                    }catch(Exception e){
-                        Toast.makeText(ListadoActivity.this,e.getMessage(), Toast.LENGTH_LONG);
-                    }
-
-                }
-
-                @Override
-                public void onFailure(Call<List<UsuarioL>> call, Throwable t) {
-                    Toast.makeText(ListadoActivity.this,"Error de red", Toast.LENGTH_LONG);
-                }
-            });
-
-            return null;
-        }
-    }*/
-
 }

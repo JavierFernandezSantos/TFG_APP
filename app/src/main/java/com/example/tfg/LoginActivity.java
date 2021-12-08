@@ -19,7 +19,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity implements Callback<Usuario> {
 
     TextView tvRegistrate, tvOlvidadoContraseña, tvEmail, tvPass;
-    Button btnEnviar, btnResetPass;
+    Button btnEnviar;
     Usuario usuarioSesion;
     boolean exito;
 
@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
         tvEmail=findViewById(R.id.etEmail);
         tvPass=findViewById(R.id.etPass);
-        btnResetPass=findViewById(R.id.btResetearPass1);
+        tvOlvidadoContraseña = findViewById(R.id.tvResetPassLogin);
 
         //ACCEDER A LA APP
         pulsarBotonEnviar();
@@ -49,13 +49,16 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
             }
         });
 
-        btnResetPass.setOnClickListener(new View.OnClickListener() {
+        //CAMBIAR A ACTIVIDAD DE RESETEO
+        tvOlvidadoContraseña.setPaintFlags(tvOlvidadoContraseña.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        tvOlvidadoContraseña.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i3 = new Intent(LoginActivity.this, ResetPassActivity.class);
                 startActivity(i3);
             }
         });
+
 
     }
     public void iniciarSesion(String email,String pass){

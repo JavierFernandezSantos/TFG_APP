@@ -116,7 +116,7 @@ public class PerfilActivity extends AppCompatActivity {
 
     private void eliminar(String id) {
 
-        final String url = "http://192.168.1.133:8080/quizbet/";
+        final String url = "http://192.168.1.32:8080/quizbet/";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
