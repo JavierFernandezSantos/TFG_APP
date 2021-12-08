@@ -66,7 +66,7 @@ public class UsuarioL {
         return fechaNac;
     }
 
-    public void setFechaNac(LocalDate fechaNac) {
+    public void setFechaNac(Object fechaNac) {
         this.fechaNac = fechaNac;
     }
 

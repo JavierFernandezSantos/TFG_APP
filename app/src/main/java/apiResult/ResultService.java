@@ -39,4 +39,10 @@ public interface ResultService {
 
     @DELETE("delete/{id}")
     Call<Usuario> eliminarUsuario(@Path("id") int id);
+
+    @GET("cambiarpass/{email}")
+    Call<Usuario> cambiarPass(@Path("email") String email);
+
+    @PUT("formularioresetpass/{codigo}/{email}/{pass}")
+    Call<Usuario> cambiarContrasenia(@Path("codigo") String codigo,@Path("email") String email,@Path("pass") String pass);
 }

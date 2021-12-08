@@ -100,7 +100,7 @@ public class ListadoActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final String url = "http://192.168.1.32:8080/quizbet/";
+                final String url = "http://192.168.1.133:8080/quizbet/";
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(url)

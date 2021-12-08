@@ -1,13 +1,10 @@
 package com.example.tfg;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,7 +19,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity implements Callback<Usuario> {
 
     TextView tvRegistrate, tvOlvidadoContraseña, tvEmail, tvPass;
-    Button btnEnviar;
+    Button btnEnviar, btnResetPass;
     Usuario usuarioSesion;
     boolean exito;
 
@@ -36,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
         tvEmail=findViewById(R.id.etEmail);
         tvPass=findViewById(R.id.etPass);
-
+        btnResetPass=findViewById(R.id.btResetearPass1);
 
         //ACCEDER A LA APP
         pulsarBotonEnviar();
@@ -49,6 +46,14 @@ public class LoginActivity extends AppCompatActivity implements Callback<Usuario
             public void onClick(View v) {
                 Intent i2 = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(i2);
+            }
+        });
+
+        btnResetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i3 = new Intent(LoginActivity.this, ResetPassActivity.class);
+                startActivity(i3);
             }
         });
 

@@ -17,7 +17,7 @@ public class UsuarioRegistroAdapter {
         // Asociamos el interceptor a las peticiones
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
-        String baseUrl = "http://192.168.1.32:8080/quizbet/";
+        String baseUrl = "http://192.168.1.133:8080/quizbet/";
 
         if (API_SERVICE == null) {
             Retrofit retrofit = new Retrofit.Builder()
