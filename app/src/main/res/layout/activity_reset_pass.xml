@@ -49,7 +49,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:gravity="center_vertical"
-        android:text="Dirección de email donde se enviará el correo electrónico:"
+        android:text="Dirección de email donde se enviará el código:"
         android:textColor="#1E1E20"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
@@ -84,7 +84,8 @@
         app:layout_constraintEnd_toEndOf="@+id/tvEmailResetPass2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvEmailResetPass2"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailResetPass2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailResetPass2"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/tvEmailResetPass"
