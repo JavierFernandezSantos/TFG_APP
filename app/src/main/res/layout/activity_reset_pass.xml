@@ -63,7 +63,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="4dp"
         android:gravity="center_vertical"
-        android:text="Codigo enviado por correo electrónico:"
+        android:text="Código enviado por correo electrónico:"
         android:textColor="#1E1E20"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/tvEmailResetPass"
